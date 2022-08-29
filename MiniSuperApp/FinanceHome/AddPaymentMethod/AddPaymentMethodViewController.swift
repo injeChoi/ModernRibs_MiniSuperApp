@@ -10,6 +10,7 @@ import UIKit
 
 protocol AddPaymentMethodPresentableListener: AnyObject {
   func didTapClose()
+  func didTapConfirm(with number: String, cvc: String, expiry: String)
 }
 
 final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPresentable, AddPaymentMethodViewControllable {
@@ -116,7 +117,11 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
   
   @objc
   private func didTapAddCard() {
-    
+    if let number = cardNumberTextField.text,
+       let cvc = securityTextField.text,
+       let expiry = expirationTextField.text {
+      listener?.didTapConfirm(with: number, cvc: cvc, expiry: expiry)
+    }
   }
   
   // 부모에게 내 화면 없애달라고 요청, interactor가 listener protocol을 채택하고 있으므로 interactor에게 flow 넘어감 
