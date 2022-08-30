@@ -80,12 +80,7 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
     title = "카드 추가"
     
     // 네이게이션 아이템으로 X 버튼 추가
-    navigationItem.leftBarButtonItem = UIBarButtonItem(
-      image: UIImage(systemName: "xmark",
-                     withConfiguration: UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold)),
-      style: .plain,
-      target: self,
-      action: #selector(didTapClose))
+    setupNavigationItem(target: self, action: #selector(didTapClose))
     
     view.backgroundColor = .backgroundColor
     view.addSubview(cardNumberTextField)
