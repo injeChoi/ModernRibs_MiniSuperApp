@@ -80,7 +80,7 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
     title = "카드 추가"
     
     // 네이게이션 아이템으로 X 버튼 추가
-    setupNavigationItem(target: self, action: #selector(didTapClose))
+    setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
     
     view.backgroundColor = .backgroundColor
     view.addSubview(cardNumberTextField)

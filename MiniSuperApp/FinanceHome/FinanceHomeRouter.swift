@@ -1,6 +1,10 @@
 import ModernRIBs
 
-protocol FinanceHomeInteractable: Interactable, SuperPayDashboardListener, CardOnFileDashboardListener, AddPaymentMethodListener, TopupListener {
+protocol FinanceHomeInteractable: Interactable,
+                                  SuperPayDashboardListener,
+                                  CardOnFileDashboardListener,
+                                  AddPaymentMethodListener,
+                                  TopupListener {
   var router: FinanceHomeRouting? { get set }
   var listener: FinanceHomeListener? { get set }
   var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }

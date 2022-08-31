@@ -5,7 +5,11 @@ protocol FinanceHomeDependency: Dependency {
   // created by this RIB.
 }
 
-final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency, CardOnFileDashboardDependency, AddPaymentMethodDependency, TopupDependency {
+final class FinanceHomeComponent: Component<FinanceHomeDependency>,
+                                  SuperPayDashboardDependency,
+                                  CardOnFileDashboardDependency,
+                                  AddPaymentMethodDependency,
+                                  TopupDependency {
   
   var cardsOnFileRepository: CardOnFileRepository
   
